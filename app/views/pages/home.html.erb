@@ -1,2 +1,13 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Le Cultivateur</h1>
+<p>Creuser le sillon de la culture !</p>
+
+<% categories = [ 'musique', 'théâtre', 'danse', 'cirque', 'cinéma' ] %>
+
+<h2><%= link_to "Trouvez tous les spectacles !", projects_path %></h2>
+
+<% categories.each do |category| %>
+              <li><%= category.capitalize %></li>
+<% end %>
+
+
+<h3><%= link_to "Réferencer votre salle de spectacle", salles_path %></h3>

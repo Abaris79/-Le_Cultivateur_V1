@@ -1,0 +1,15 @@
+<%= link_to "Retour à l'index", projects_path %>
+<%= form_for @project do |f| %>
+
+
+  <%= f.label :name, "Nom du projet" %>
+  <%= f.text_field :name %>
+
+  <%= f.label :category, "Quelle catégorie artistique votre projet s'inclut" %>
+  <%= f.text_field :category %>
+
+  <%= f.label :cost, "Combien coûte votre projet" %>
+  <%= f.number_field :cost %>
+
+  <%= f.button :submit %>
+<% end %>

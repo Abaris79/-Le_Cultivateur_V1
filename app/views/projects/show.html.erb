@@ -1,0 +1,23 @@
+<% content_for(:title_tag) do %>
+   <%= @project.name %> est sur Le Cultivateur
+<% end %>
+
+<h2><%= @project.name %></h2>
+
+  <p><%= link_to "Editer", edit_project_path(@project) %>
+    <%= link_to "Effacer", project_path(@project), method: :delete %></p>
+
+    <h3>Programme :</h3>
+    <ul><% @project.programmes.each do |programme| %>
+      <li>
+        <%= "#{programme.author}, #{programme.name},  #{programme.reference}, #{programme.date}, #{programme.duration}' " %>
+        <p><%= link_to "Editer", edit_project_programme_path(@project, programme) %>
+    <%= link_to "Effacer", project_programme_path(@project, programme), method: :delete %></p>
+      </li>
+        <% end %>
+    </ul>
+    <%= link_to "Ajouter une œuvre", new_project_programme_path(@project) %>
+    <%= link_to "Tous les projets", projects_path %>
+
+
+<!-- programme.name, programme.author, programme.date, programme.reference, programme.duration -->

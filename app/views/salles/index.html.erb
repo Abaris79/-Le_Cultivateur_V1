@@ -1,0 +1,7 @@
+<h1>Vos Oasis de Culture</h1>
+
+<% @salles.each do |salle| %>
+    <h3><%= link_to salle.name, salle_path(salle) %></h3>
+  <% end %>
+
+<h2><%= link_to "Dévoiler un Oasis", new_salle_path %></h2>

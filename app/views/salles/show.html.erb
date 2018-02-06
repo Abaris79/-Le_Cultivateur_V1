@@ -1,0 +1,10 @@
+<h2><%= @salle.name %></h2>
+<h3><%= @salle.city%></h3>
+<ul>
+  <li>Jauge : <%= @salle.jauge %></li>
+  <li>Largeur de scène : <%= @salle.stage_span %> mètres</li>
+  <li>Acoustique : <%= @salle.acoustic %></li>
+</ul>
+  <p><%= link_to "Editer", edit_salle_path(@salle) %>
+    <%= link_to "Effacer", salle_path(@salle), method: :delete %></p>
+    <%= link_to "Toutes les salle", salles_path  %>

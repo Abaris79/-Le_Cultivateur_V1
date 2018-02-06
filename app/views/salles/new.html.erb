@@ -1,0 +1,23 @@
+<%= link_to "Retour au paradis", salles_path %>
+<%= form_for @salle do |f| %>
+
+
+  <%= f.label :name, "Nom de la salle" %>
+  <%= f.text_field :name %>
+
+  <%= f.label :city, "Ville" %>
+  <%= f.text_field :city %>
+
+  <%= f.label :acoustic, "Choississez une comparaison d'acoustique" %>
+  <%= f.text_field :acoustic %>
+
+  <%= f.label :stage_span, "Quelle est la largeur de scène" %>
+  <%= f.number_field :stage_span %>
+
+  <%= f.label :jauge, "Quelle est la jauge de la salle" %>
+  <%= f.number_field :jauge %>
+
+
+  <%= f.button :submit %>
+<% end %>
+

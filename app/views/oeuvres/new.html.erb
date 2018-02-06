@@ -1,0 +1,24 @@
+<h3><%= link_to "Retour au Projet", project_path(@project) %></h3>
+<h2>Ajouter une œuvre au programme <%= @project.name %></h2>
+
+<%= form_for [@project, @oeuvre] do |f| %>
+
+
+  <%= f.label :name, "Nom de l'œuvre" %>
+  <%= f.text_field :name %>
+
+  <%= f.label :author, "Auteur" %>
+  <%= f.text_field :author %>
+
+  <%= f.label :reference, "Référence(s)" %>
+  <%= f.text_field :reference %>
+
+  <%= f.label :date, "Date de création" %>
+  <%= f.number_field :date %>
+
+  <%= f.label :duration, "Quelle est la durée de l'œuvre" %>
+  <%= f.number_field :duration %>
+
+
+  <%= f.button :submit %>
+<% end %>

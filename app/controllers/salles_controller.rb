@@ -1,5 +1,5 @@
 class SallesController < ApplicationController
-
+  skip_before_action :authenticate_user!, only: [ :index, :show]
   before_action :set_salle, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -11,7 +11,8 @@ class SallesController < ApplicationController
     @salle = Salle.new
   end
   def create
-    @salle = Salle.create(salle_params)
+    @salle = Salle.new(salle_params)
+    @salle.user = current_user
     if @salle.save
       redirect_to salles_path
     else
@@ -26,13 +27,13 @@ class SallesController < ApplicationController
   end
   def destroy
     @salle.destroy
-    redirect_to salle_path
+    redirect_to salles_path
   end
 
   private
 
   def set_salle
-    @salle = salle.find(params[:id])
+    @salle = Salle.find(params[:id])
   end
   def salle_params
     params.require(:salle).permit(:name, :acoustic, :stage_span, :city, :jauge)

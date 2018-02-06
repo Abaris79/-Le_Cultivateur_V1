@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  # skip_before_action :authenticate_user!, only: [ :index, :show]
+  skip_before_action :authenticate_user!, only: [ :index, :show]
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -11,7 +11,9 @@ class ProjectsController < ApplicationController
     @project = Project.new
   end
   def create
-    @project = Project.create(project_params)
+    @project = Project.new(project_params)
+    @project.user = current_user
+    @project.save
     if @project.save
       redirect_to projects_path
     else
@@ -35,6 +37,6 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
   end
   def project_params
-    params.require(:project).permit(:name, :category, :cost, :user_id, :description, :duration, :min_span_stage, :acoustic)
+    params.require(:project).permit(:name, :category, :cost, :description, :duration, :min_span_stage, :acoustic)
   end
 end

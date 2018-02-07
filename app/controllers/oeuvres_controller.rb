@@ -1,5 +1,5 @@
 class OeuvresController < ApplicationController
-  before_action :set_project
+  before_action :set_project, only: [:show, :edit, :update, :destroy, :create, :new]
   before_action :set_oeuvre, only: [:show, :edit, :update, :destroy]
 
   def index

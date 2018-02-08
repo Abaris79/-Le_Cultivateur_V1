@@ -2,6 +2,6 @@
 
 <% @oeuvres.each do |oeuvre| %>
   <ul>
-    <li><%= oeuvre.name %></li>
+    <li><%= oeuvre.name %> se trouve dans le projet <%= link_to oeuvre.project.name, project_path(oeuvre.project_id) %></li>
   </ul>
 <% end %>

@@ -39,7 +39,7 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_in", default: "Connexion"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
 
@@ -48,9 +48,17 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+        <li><%= link_to "Projets", projects_path %></li>
+        <li><%= link_to "Salles" %></li>
+        <li><%= link_to "Œuvres", oeuvres_path %></li>
+        <% if user_signed_in? %>
+          <li><%= link_to destroy_user_session_path, method: :delete do %>
+                <%= t(".sign_out", default: "Log out") %>
+              <% end %>
+        <% else %>
+          <li><%= link_to "Connexion", new_user_session_path %></li>
+        <% end %>
+        </li>
       </ul>
     </div>
   </div>

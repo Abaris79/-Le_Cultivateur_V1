@@ -4,6 +4,7 @@ class OeuvresController < ApplicationController
 
   def index
     @oeuvres = Oeuvre.all
+    @oeuvres_sorted_by_author = @oeuvres.sort_by{ |oeuvre| oeuvre.author.capitalize }
   end
   def show
   end

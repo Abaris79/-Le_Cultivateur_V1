@@ -1,7 +1,7 @@
 <h1>Toutes les œuvres sont sur Le Cultivateur</h1>
 
-<% @oeuvres.each do |oeuvre| %>
+<% @oeuvres_sorted_by_author.each do |oeuvre| %>
   <ul>
-    <li><%= oeuvre.name %> se trouve dans le projet <%= link_to oeuvre.project.name, project_path(oeuvre.project_id) %></li>
+    <li><%= "L'œuvre de #{oeuvre.author}, #{oeuvre.name}," %> se trouve dans le projet <%= link_to oeuvre.project.name, project_path(oeuvre.project_id) %></li>
   </ul>
 <% end %>

@@ -12,14 +12,16 @@ class SallesController < ApplicationController
   end
   def create
     @salle = Salle.new(salle_params)
+    @salle.address = @salle.zip.to_s + " " + @salle.city
     @salle.user = current_user
     if @salle.save
-      redirect_to salles_path
+      redirect_to salle_path(@salle)
     else
       render :new
     end
   end
   def edit
+
   end
   def update
     @salle.update(salle_params)
@@ -34,8 +36,9 @@ class SallesController < ApplicationController
 
   def set_salle
     @salle = Salle.find(params[:id])
+    @salle.address = @salle.zip.to_s + " " + @salle.city
   end
   def salle_params
-    params.require(:salle).permit(:name, :acoustic, :stage_span, :city, :jauge)
+    params.require(:salle).permit(:name, :acoustic, :stage_span, :city, :jauge, :zip)
   end
 end

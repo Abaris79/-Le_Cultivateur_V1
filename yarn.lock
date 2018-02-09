@@ -838,6 +838,10 @@ binary-extensions@^1.0.0:
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-1.11.0.tgz#46aa1751fb6a2f93ee5e689bb1087d4b14c6c205"
 
+blob-to-buffer@^1.0.2:
+  version "1.2.7"
+  resolved "https://registry.yarnpkg.com/blob-to-buffer/-/blob-to-buffer-1.2.7.tgz#bd8eee0aef300b509e2305ad752cde8c14e6499c"
+
 block-stream@*:
   version "0.0.9"
   resolved "https://registry.yarnpkg.com/block-stream/-/block-stream-0.0.9.tgz#13ebfe778a03205cfe03751481ebb4b3300c126a"
@@ -1762,6 +1766,14 @@ dns-txt@^2.0.2:
 domain-browser@^1.1.1:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/domain-browser/-/domain-browser-1.2.0.tgz#3d31f50191a6749dd1375a7f522e823d42e54eda"
+
+drag-drop@^2.13.2:
+  version "2.13.2"
+  resolved "https://registry.yarnpkg.com/drag-drop/-/drag-drop-2.13.2.tgz#a01ff4459123f5ae0a8c8bd9bb38c625ccb81550"
+  dependencies:
+    blob-to-buffer "^1.0.2"
+    flatten "^1.0.2"
+    run-parallel "^1.0.0"
 
 duplexify@^3.4.2, duplexify@^3.5.3:
   version "3.5.3"
@@ -4953,6 +4965,10 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
   dependencies:
     hash-base "^2.0.0"
     inherits "^2.0.1"
+
+run-parallel@^1.0.0:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/run-parallel/-/run-parallel-1.1.6.tgz#29003c9a2163e01e2d2dfc90575f2c6c1d61a039"
 
 run-queue@^1.0.0, run-queue@^1.0.3:
   version "1.0.3"

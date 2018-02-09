@@ -14,6 +14,7 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'sass-rails'
 gem 'simple_form'
+gem 'geocoder'
 gem 'uglifier'
 gem 'webpacker'
 

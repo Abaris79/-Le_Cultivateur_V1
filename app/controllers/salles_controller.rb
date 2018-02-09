@@ -3,9 +3,21 @@ class SallesController < ApplicationController
   before_action :set_salle, only: [:show, :edit, :update, :destroy]
 
   def index
-    @salles = Salle.all
+    @salles = Salle.all.sort
+    @salles_map = Salle.where.not(latitude: nil, longitude: nil)
+
+    @markers = @salles_map.map do |salle|
+      {
+        lat: salle.latitude,
+        lng: salle.longitude,
+        infoWindow: { content: render_to_string(partial: "/salles/map_box", locals: { salle: salle }) }
+      }
+    end
   end
   def show
+    # salles_ids = []
+    # Salle.all.each { |salle| salles_ids << salle.id }
+    # @salles_ids = salles_ids
   end
   def new
     @salle = Salle.new

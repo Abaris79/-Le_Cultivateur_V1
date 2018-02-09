@@ -9,4 +9,6 @@
 </ul>
   <p><%= link_to "Editer", edit_salle_path(@salle) %>
     <%= link_to "Effacer", salle_path(@salle), method: :delete %></p>
-    <%= link_to "Toutes les salles", salles_path  %>
+    <%= link_to "Précédent", @salle.prev %>
+    <%= link_to "Suivant", @salle.next %>
+  <p><%= link_to "Toutes les salles", salles_path  %></p>
